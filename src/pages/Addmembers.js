@@ -101,7 +101,8 @@ export const Addmembers = () => {
         formData,
         {
           headers: {
-            "Content-Type": "multipart/form-data",
+            "Content-Type": "application/json",
+            
           },
         }
       );
