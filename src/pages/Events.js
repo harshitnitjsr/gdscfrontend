@@ -81,7 +81,8 @@ const Addevents = () => {
       formData,
       {
         headers: {
-          "Content-Type": "multipart/form-data",
+          "Content-Type": "application/json",
+          
         },
       }
     );
