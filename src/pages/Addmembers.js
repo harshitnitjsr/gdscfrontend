@@ -69,10 +69,11 @@ export const Addmembers = () => {
     setFile(imgfile);
     if (imgfile) {
       const reader = new FileReader();
+      reader.readAsDataURL(imgfile);
       reader.onloadend = (e) => {
         setImage(reader.result);
       };
-      reader.readAsDataURL(imgfile);
+      
     }
   };
   const handleSubmit = async (e) => {
@@ -93,7 +94,8 @@ export const Addmembers = () => {
       formData.append("year", year);
       formData.append("branch", branch);
       formData.append("profilePhoto", profilePhoto);
-      console.log(profilePhoto);
+      formData.append('image',image)
+      // console.log(image);
       const res = await axios.post(
         "https://gdsc-ten.vercel.app/api/user/addmember",
         formData,

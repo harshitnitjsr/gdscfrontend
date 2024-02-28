@@ -7,6 +7,8 @@ import Spinner from "./Spinner";
 const Addevents = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+  const [image, setImage] = useState();
+  const [thumbnail, setthumbnail] = useState();
   const [details, setDetails] = useState({
     title: "",
     category: "workhop",
@@ -36,10 +38,22 @@ const Addevents = () => {
       }
     }
   };
+  const handleUploadImage = (e) => {
+    const imgfile = e.target.files[0];
+    setthumbnail(imgfile);
+    if (imgfile) {
+      const reader = new FileReader();
+      reader.readAsDataURL(imgfile);
+      reader.onloadend = (e) => {
+        setImage(reader.result);
+      };
+      
+    }
+  };
   useEffect(() => {
     authenticate();
   }, [localStorage.getItem("email")]);
-  const [thumbnail, setthumbnail] = useState();
+  // const [thumbnail, setthumbnail] = useState();
   const [res, setres] = useState();
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -60,6 +74,7 @@ const Addevents = () => {
     formData.append("description", details.description);
     formData.append("thumbnail", thumbnail);
     formData.append("color", details.color);
+    formData.append("image",image)
     console.log(thumbnail);
     const response = await axios.post(
       "https://gdsc-ten.vercel.app/api/v1/addevents",
@@ -71,7 +86,7 @@ const Addevents = () => {
       }
     );
 
-    console.log(response);
+    // console.log(response);
     if (!response.data.success) {
       setres(response.data);
       //alert("error");
@@ -192,7 +207,7 @@ const Addevents = () => {
                 className="form-input mt-1 block w-full border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:focus:border-blue-500 dark:focus:ring-blue-500"
                 aria-describedby="user_avatar_help"
                 accept="image/*"
-                onChange={handlethumbnail}
+                onChange={handleUploadImage}
                 id="thumbnail"
                 name="thumbnail"
                 type="file"
