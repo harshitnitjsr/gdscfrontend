@@ -10,7 +10,7 @@ import axios from "axios";
 
 export default function Events() {
   const [productData,setproductdata]=useState([])
-  const baseurl = 'https://gdsc-ten.vercel.app/';
+  const baseurl = 'https://gdscbackend-alpha.vercel.app/';
 
 
 // Remove any leading slashes from thumbnailPath
@@ -43,7 +43,7 @@ const options = { year: 'numeric', month: 'short', day: 'numeric' };
     />
   ));
   const fetchdata = async ()=>{
-              const response= await axios.get('https://gdsc-ten.vercel.app/api/v1/displayevents')
+              const response= await axios.get('https://gdscbackend-alpha.vercel.app/api/v1/displayevents')
               console.log(response.data)
               setproductdata(response.data)
   }

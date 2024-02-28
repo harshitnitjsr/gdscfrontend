@@ -64,10 +64,10 @@ const OurTeam =() => {
 
 
     ]
-    const baseurl = 'https://gdsc-ten.vercel.app/';
+    const baseurl = 'https://gdscbackend-alpha.vercel.app/';
       const [profiles,setprofiles]=useState([])
     const fetchdata =  async () =>{
-      const response = await axios.get('https://gdsc-ten.vercel.app/api/v1/displaymembers')
+      const response = await axios.get('https://gdscbackend-alpha.vercel.app/api/v1/displaymembers')
        setprofiles(response.data)
       console.log(response.data)
     }

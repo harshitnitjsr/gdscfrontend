@@ -25,7 +25,7 @@ export const Addmembers = () => {
       navigate("/login");
     } else {
       const ans = await axios.post(
-        "https://gdsc-ten.vercel.app/api/user/authenticate",
+        "https://gdscbackend-alpha.vercel.app/api/user/authenticate",
         {
           email: value,
         }
@@ -97,7 +97,7 @@ export const Addmembers = () => {
       formData.append('image',image)
       // console.log(image);
       const res = await axios.post(
-        "https://gdsc-ten.vercel.app/api/user/addmember",
+        "https://gdscbackend-alpha.vercel.app/api/user/addmember",
         formData,
         {
           headers: {

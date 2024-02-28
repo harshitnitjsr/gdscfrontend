@@ -19,7 +19,7 @@ const Login = () => {
     setLoading(true);
     e.preventDefault();
   
-    const response = await fetch("https://gdsc-ten.vercel.app/api/v1/login", {
+    const response = await fetch("https://gdscbackend-alpha.vercel.app/api/v1/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
