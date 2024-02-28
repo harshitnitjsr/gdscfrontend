@@ -35,7 +35,7 @@ const options = { year: 'numeric', month: 'short', day: 'numeric' };
     <Product
       name1={new Date(item.date).toLocaleDateString('en-US', options)}
       name2={item.startTime+"-"+item.endTime}
-      url={`${baseurl}${item.thumbnailurl}`}
+      url={`${item.thumbnailurl}`}
       price={item.price}
       description1={item.title}
       description2={item.category}

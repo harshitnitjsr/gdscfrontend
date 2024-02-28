@@ -236,11 +236,11 @@ export const Addmembers = () => {
                 {resp && (
                   <>
                     <img
-                      src={`https://gdsc-ten.vercel.app/${resp.data.newUser.imageurl}`}
+                      src={`${resp.data.newUser.imageurl}`}
                       alt="User"
                     />
                     {console.log(
-                      `https://gdsc-ten.vercel.app/${resp.data.newUser.imageurl}`
+                      `${resp.data.newUser.imageurl}`
                     )}
                   </>
                 )}

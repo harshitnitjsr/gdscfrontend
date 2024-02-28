@@ -106,7 +106,7 @@ const OurTeam =() => {
   {profiles.map((person, index) => (<>
     <SwiperSlide key={index}>
       <div>
-        <img className='m-auto' src={`${baseurl}${person.imageurl}`} alt={person.name} />
+        <img className='m-auto' src={`${person.imageurl}`} alt={person.name} />
         <h2 className='text-center text-[32px] font-Patrick leading-[48px]'>{person.name}</h2>
         <p className='text-center text-[20px] font-Lato leading-[30px]'>{person.team}</p>
       </div>

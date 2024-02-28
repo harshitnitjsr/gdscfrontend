@@ -226,10 +226,10 @@ const Addevents = () => {
           {res && (
             <>
               <img
-                src={`https://gdsc-ten.vercel.app/${res.thumbnailurl}`}
+                src={`${res.thumbnailurl}`}
                 alt="User"
               />
-              {console.log(`https://gdsc-ten.vercel.app/${res.thumbnailurl}`)}
+              {console.log(`${res.thumbnailurl}`)}
             </>
           )}
         </div>
