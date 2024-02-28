@@ -22,7 +22,7 @@ const Addevents = () => {
       navigate("/login");
     } else {
       const ans = await axios.post(
-        "http://localhost:3080/api/user/authenticate",
+        "https://gdsc-ten.vercel.app/api/user/authenticate",
         {
           email: value,
         }
@@ -62,7 +62,7 @@ const Addevents = () => {
     formData.append("color", details.color);
     console.log(thumbnail);
     const response = await axios.post(
-      "http://localhost:3080/api/v1/addevents",
+      "https://gdsc-ten.vercel.app/api/v1/addevents",
       formData,
       {
         headers: {
@@ -226,10 +226,10 @@ const Addevents = () => {
           {res && (
             <>
               <img
-                src={`http://localhost:3080/${res.thumbnailurl}`}
+                src={`https://gdsc-ten.vercel.app/${res.thumbnailurl}`}
                 alt="User"
               />
-              {console.log(`http://localhost:3080/${res.thumbnailurl}`)}
+              {console.log(`https://gdsc-ten.vercel.app/${res.thumbnailurl}`)}
             </>
           )}
         </div>
